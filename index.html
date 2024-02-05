@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>library</title>
+
+    <!-- JS -->
+    <script src="./assets/JS/data.js"></script>
+    <script src="./assets/JS/function.js" defer></script>
+    <script src="./assets/JS/main.js" defer></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- font -->
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <i id="hiddenMenuBtn" class="fa-solid fa-xl fa-bars" style="color: #61892F;"></i>
+
+        <span class="navbar__shop-holder">
+            <i id="shopBtn" class="fa-solid fa-xl fa-cart-shopping" style="color: #61892F;"></i>
+            <p id="shopCounter"></p>
+        </span>
+
+        <span id="hiddenMenu">
+
+            <ul>
+
+                <li><a href="https://en.wikipedia.org/wiki/Banana">HOME</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Banana">ABOUT ME</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Banana">OTHER ...</a></li>
+
+            </ul>
+
+        </span>
+
+    </nav>
+
+    <nav class="lg-nav">
+
+        <span>
+
+            <ul>
+
+                <li><h2><a href="https://en.wikipedia.org/wiki/Banana">HOME</a></h2></li>
+                <li><a href="https://en.wikipedia.org/wiki/Banana">ABOUT ME</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Banana">OTHER ...</a></li>
+
+            </ul>
+
+        </span>
+
+        <span class="navbar__shop-holder">
+            <i id="shopBtn" class="fa-solid fa-xl fa-cart-shopping" style="color: #61892F;"></i>
+            <p id="shopCounter"></p>
+        </span>
+
+
+
+    </nav>
+
+
+    <main class="container">
+
+        <section class="container__filter">
+
+            <ul id="genreFilter" class="container__filter__genre">
+
+            </ul>
+
+            <ul id="langFilter" class="container__filter__language">
+
+            </ul>
+
+        </section>
+
+
+        <section id="root" class="container__books">
+
+        </section>
+
+        <section id="pagenation">
+
+        </section>
+
+
+
+    </main>
+
+
+
+
+</body>
+
+</html>

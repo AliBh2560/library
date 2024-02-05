@@ -1,0 +1,23 @@
+.container__filter{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    padding-left: 10px;
+    padding-bottom: 50px;
+    color: #ffffff;
+    font-family: "Poppins";
+    
+}
+.container__filter__genre{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.container__filter__language{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}

@@ -1,0 +1,23 @@
+@import '../sass/shared/variable';
+@import '../sass/shared/normalize';
+@import '../sass/block/navbar';
+@import '../sass/block/books-container';
+@import '../sass/block/filters-container';
+@import '../sass/block/pagenation';
+@import '../sass/block/card';
+@import '../sass/block/container';
+
+
+@media screen and (min-width:964px){
+
+    .single-card>img {
+        width: 30%;
+    }
+    .lg-nav{
+        display: flex;
+    }
+    .navbar{
+        display: none;
+    }
+    
+}
