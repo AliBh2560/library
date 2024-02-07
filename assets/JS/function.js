@@ -8,8 +8,8 @@ function render(list, page = 1) {
     let tamplate = currPageBooks.map((card, index) => {
         return `
             <div class="card">
-                <i onclick="addToShop(${index})" id="addToShop" class="fa-regular fa-lg fa-bookmark" style="color:${card.isSelected ? "gold" : "#86C232"}; "></i>
-                <i onclick="renderCard(${index})" id="cardDesc" class="fa-solid fa-lg fa-ellipsis" style = "color: #86C232;" ></i>
+                <i onclick="addToShop(${card.id})" id="addToShop" class="fa-regular fa-lg fa-bookmark" style="color:${card.isSelected ? "gold" : "#86C232"}; "></i>
+                <i onclick="renderCard(${card.id})" id="cardDesc" class="fa-solid fa-lg fa-ellipsis" style = "color: #86C232;" ></i>
             <img class="card__img" src="./assets/images/${card.imgSrc}" alt="">
 
                 <sec class="card__content">
@@ -47,7 +47,7 @@ function renderPagination(list) {
 
 
     pagesContainer.innerHTML = paginationTemp;
-    
+
 }
 
 
@@ -141,7 +141,7 @@ function filter() {
         if (selcetedLang.includes(card.language)) langFilterd.push(card)
 
     });
-    
+
     render(langFilterd)
 }
 
@@ -149,31 +149,38 @@ function filter() {
 function addToShop(index) {
     shopCounter.textContent = 0;
 
-    BOOKS[index].isSelected = !(BOOKS[index].isSelected)
+    BOOKS.forEach(book => {
+        if (book.id == index) book.isSelected = !(book.isSelected)
+    })
 
     BOOKS.forEach(card => {
         if (card.isSelected) shopCounter.textContent++
     })
     filter()
-    
+
 }
 
 function renderCard(index) {
     pagention.classList.add('hide');
     filterContainer.classList.add('hide');
+    
+    let temp = BOOKS.find(book => {
+        return book.id == index
+    })
+
     bookContainer.innerHTML = `
     <div class="single-card">
 
-            <img src="./assets/images/${BOOKS[index].imgSrc}" alt="">
+            <img src="./assets/images/${temp.imgSrc}" alt="">
 
             <i onclick="closeCard()" id="closeBtn" class="fa-solid fa-x" style="color: #86C232;"></i>
 
             <span class="single-card__content">
-                <h1>${BOOKS[index].title}</h1>
-                <h3>${BOOKS[index].author}</h3>
-                <h3>${BOOKS[index].published_date}</h3>
-                <h3>${BOOKS[index].language}</h3>
-                <h3>${BOOKS[index].genre}</h3>
+                <h1>${temp.title}</h1>
+                <h3>${temp.author}</h3>
+                <h3>${temp.published_date}</h3>
+                <h3>${temp.language}</h3>
+                <h3>${temp.genre}</h3>
             </span>
         </div>
     
